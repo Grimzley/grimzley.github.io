@@ -1,0 +1,202 @@
+:root {
+    --accent-color: #B65FCF;
+    --accent-shadow: #A32CC4;
+    --header-footer-color: #111111;
+    --header-footer-text-color: #FFFFFF;
+    --main-background-color: #F7F7F7;
+    --main-text-color: #444444;
+    --border-color: #777777;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-background-color);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+figure {
+    margin: 0;
+    justify-self: center;
+    align-self: center;
+}
+figure img {
+    border: 3px solid var(--accent-color);
+    box-sizing: border-box;
+}
+span {
+    font-weight: bold;
+}
+
+/* Header */
+header {
+    background-color: var(--header-footer-color);
+}
+nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+}
+nav h1 {
+    font-size: 2em;
+    color: var(--accent-color);
+    text-shadow:
+        0px 1px 0px var(--accent-shadow),
+        0px 2px 0px var(--accent-shadow),
+        0px 3px 0px var(--accent-shadow),
+        0px 4px 0px var(--accent-shadow),
+        0px 5px 0px var(--accent-shadow);
+}
+nav a {
+    color: var(--header-footer-text-color);
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+main section {
+    border-bottom: 1px solid var(--border-color);
+}
+main section:last-child {
+    border-bottom: none;
+}
+main section h2 {
+    margin-bottom: 0;
+}
+main section p {
+    color: var(--main-text-color);
+}
+
+/* Sections */
+div.grid-container {
+    padding: 20px 0;
+    display: grid;
+    gap: 10px;
+}
+div.grid-container h3, div.grid-container h5 {
+    grid-column: 1 / -1;
+}
+
+/* About Me */
+div.about {
+    grid-template-columns: repeat(2, 1fr);
+}
+div.about img {
+    width: 400px;
+    object-fit: contain;
+}
+.fun-facts {
+    align-self: center;
+}
+.fun-facts ul {
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+/* Forecaster */
+div.forecaster img {
+    max-width: 600px;
+    object-fit: contain;
+}
+
+/* Pathfinding Visualizer */
+div.pathfinder {
+    grid-template-columns: repeat(2, 1fr);
+}
+div.pathfinder div {
+    grid-row: span 2;
+}
+div.pathfinder img{
+    max-width: 500px;
+    object-fit: contain;
+}
+
+/* Pac-Man 3D */
+div.pacman img {
+    max-width: 600px;
+    object-fit: contain;
+}
+
+/* Music */
+div.music {
+    grid-template-columns: repeat(3, 1fr);
+}
+div.music div {
+    grid-column: 1 / -1;
+}
+div.music img {
+    width: 300px;
+    object-fit: contain;
+}
+.ignite {
+    color: #f76d19;
+    text-decoration: none;
+}
+
+/* Games */
+div.games img {
+    max-width: 600px;
+    object-fit: contain;
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-footer-color);
+    padding: 10px 0;
+}
+footer p {
+    color: var(--header-footer-text-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1200px) {
+    div.grid-container {
+        grid-template-columns: 1fr;
+    }
+    div.about figure:last-of-type {
+        grid-row: 5;
+    }
+    div.pathfinder figure:first-of-type {
+        grid-row: 3;
+    }
+}
+@media screen and (max-width: 700px) {
+    nav {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    nav h1 {
+        grid-column: span 4;
+        grid-row: 1;
+    }
+    section h2 {
+        text-align: center;
+    }
+    div.about img {
+        width: 350px;
+        height: 250px;
+    }
+    div.pathfinder img {
+        max-width: 350px;
+    }
+}
+@media screen and (max-width: 500px) {
+    nav a span {
+        font-size: 0.7em;
+    }
+    div.about img{
+        width: 250px;
+        height: 175px;
+    }
+    div.pathfinder img {
+        max-width: 250px;
+    }
+}

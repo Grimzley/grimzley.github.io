@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="/img/icons/favicon.png">
+        <title>Michael Grimsley</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div>
+                    <a class="fa fa-github" href="https://github.com/Grimzley" target="_blank">
+                        <span> GitHub</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="fa fa-linkedin" href="https://www.linkedin.com/in/mjgrimsley/" target="_blank">
+                        <span> LinkedIn</span>
+                    </a>
+                </div>
+                <h1>Grimsley</h1>
+                <div>
+                    <a class="fa fa-facebook" href="https://www.facebook.com/michael.grimsley.90" target="_blank">
+                        <span> Facebook</span>
+                    </a>
+                </div>
+                <div>
+                    <a class="fa fa-instagram" href="https://www.instagram.com/naneun_zayda/" target="_blank">
+                        <span> Instagram</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Who Am I?</h2>
+                <div class="grid-container about">                    
+                    <div class="fun-facts">
+                        <ul>
+                            <li><span>Michael Facts</span></li>
+                            <li>Full Name: Michael James Grimsley</li>
+                            <li>Birthday: March 30, 1999</li>
+                            <li>MBTI: ISTJ-T</li>
+                            <li>Ethnicity: Filipino-American</li>
+                            <li>Education: Bachelor of Science in Computer Science from San Diego State University</li>
+                            <li>Hobbies: Playing video games, listening to music, and dancing</li>
+                            <li>Favorite Color: Purple</li>
+                            <li>Favorite Animal: Koala</li>
+                            <li>Favorite Show: One Piece</li>
+                        </ul>
+                    </div>
+                    <figure>
+                        <img src="img/travel/pi-me.jpg" alt="Me in the Philippines">
+                    </figure>
+                </div>
+            </section>
+            <section>
+                <h2>Projects</h2>
+                <div class="grid-container forecaster">
+                    <h3>Forecaster</h3>
+                    <p>
+                        Forecaster is a single-page weather application developed with React that can display real-time weather information for the user's location. Weather data for the next seven days is displayed, and a day can be selected to view additional information. Switches are also included to change the units that the temperatures and wind speeds are displayed in. Upon loading the page, the browser will ask the user for permission to access their location using the browser's Geolocation API. A default location is set if permission is denied. BigDataCloud's Reverse Geocoding API converts the given latitude and longitude coordinates into a human-readable city name. Weather data of the given location is then obtained through Open-Meteo's Weather API.
+                    </p>
+                    <figure>
+                        <img src="img/projects/weather.png" alt="Forecaster">
+                    </figure>
+                </div>
+                <div class="grid-container pathfinder">
+                    <h3>Pathfinding Visualizer</h3>
+                    <div>
+                        <h5>Overview</h5>
+                        <p>
+                            Using Python and the pygame library, I created a color-coded graph search visualizer. This program implements Depth-First Search, Breadth-First Search, Greedy Best-First Search, and A*. The grid is customizable, allowing the user to change the location of the source and target and add and remove obstacles. A legend is included on the side to indicate what the color of each tile in the grid represents.
+                        </p>
+                        <h5>How To Use</h5>
+                        <div>
+                            <p>
+                                Left clicking on the grid will change the color of the hovered tile to black, turning that tile into a wall. Conversely, right clicking on the grid will change the color of the hovered tile to gray, turning that tile into a path. In addition, clicking and dragging will convert any tiles the cursor moves over accordingly. By design, the tiles along the edges will always form a wall enclosing the grid.
+                            </p>
+                            <p>
+                                Other keybinds include:
+                            </p>
+                            <ul>
+                                <li>SPACE: begin search</li>
+                                <li>S: set start at hovered tile</li>
+                                <li>E: set end at hovered tile</li>
+                                <li>D: switch between adjacent and orthogonal movement</li>
+                                <li>R: reset</li>
+                                <li>C: clear</li>
+                            </ul>
+                            <p>
+                                A* is the default algorithm on startup. Clicking any of the four algorithm buttons will change the set algorithm and cause the program to start searching with the selected algorithm.
+                            </p>
+                        </div>
+                        <h5>Algorithms Explained</h5>
+                        <div>
+                            <p>
+                                Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
+                            </p>
+                            <p>
+                                The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
+                            </p>
+                            <p>
+                                All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
+                            </p>
+                        </div>
+                    </div>
+                    <figure>
+                        <img src="img/projects/pathfinder.png" alt="Pathfinding Visualizer">
+                    </figure>
+                    <figure>
+                        <img src="img/projects/a-star.gif" alt="A* Example">
+                    </figure>
+                </div>
+                <div class="grid-container pacman">
+                    <h3>Pac-Man 3D</h3>
+                    <figure>
+                        <img src="img/projects/unity.png" alt="Gameplay">
+                    </figure>
+                    <div>
+                        <p>
+                            Using the Unity game engine, I recreated the Pac-Man video game. However, the game is played from a first-person perspective, and scary sounds and props are used to turn it into a horror game. There are 150 pellets scattered across the level that the player must gather to win. There are 4 ghosts that navigate the maze and are constantly alternating between chasing the player and scattering to their respective corners of the map. Each ghost also has a different targeting system when they are in chase mode.
+                        </p>
+                        <ul>
+                            <li>Blinky (Red): The player's position</li>
+                            <li>Pinky (Pink): 4 tiles in front of the player's position</li>
+                            <li>Inky (Cyan): The end of the vector from Blinky's position to the player's position times 2</li>
+                            <li>
+                                Clyde (Orange): The player's position if they are farther than 8 tiles away, the bottom-left corner of the map otherwise
+                            </li>
+                        </ul>
+                        <p>
+                            The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
+                        </p>
+                        <p>
+                            The controls are simple: WASD to walk around, use the mouse to look around, and press the Tab key to pause the game. 
+                        </p>
+                    </div>
+                    <figure>
+                        <img src="img/projects/pacman.png" alt="Gameplay">
+                    </figure>
+                </div>
+                <div class="grid-container">
+                    <h3>Bash</h3>
+                    <p>
+                        Coming soon ...
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; Grimsley 2024</p>
+        </footer>
+    </body>
+</html>
