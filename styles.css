@@ -135,6 +135,9 @@ div.music img {
     width: 300px;
     object-fit: contain;
 }
+div.music figure:first-of-type {
+    grid-column: span 3;
+}
 .ignite {
     color: #f76d19;
     text-decoration: none;
@@ -162,17 +165,14 @@ footer p {
     div.grid-container {
         grid-template-columns: 1fr;
     }
-    div.pathfinder figure:first-of-type {
-        grid-row: 2;
-    }
-    div.music figure:nth-of-type(1) {
-        grid-row: 4;
-    }
     div.music figure:nth-of-type(2) {
-        grid-row: 6;
+        grid-row: 5;
     }
     div.music figure:nth-of-type(3) {
         grid-row: 7;
+    }
+    div.music figure:nth-of-type(4) {
+        grid-row: 8;
     }
 }
 @media screen and (max-width: 700px) {
