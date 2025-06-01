@@ -47,13 +47,32 @@
             </section>
             <section>
                 <h2>Projects</h2>
-                <div class="grid-container forecaster">
-                    <h3>Forecaster</h3>
-                    <p>
-                        Forecaster is a single-page weather application developed with React that can display real-time weather information for the user's location. Weather data for the next seven days is displayed, and a day can be selected to view additional information. Switches are also included to change the units that the temperatures and wind speeds are displayed in. Upon loading the page, the browser will ask the user for permission to access their location using the browser's Geolocation API. A default location is set if permission is denied. BigDataCloud's Reverse Geocoding API converts the given latitude and longitude coordinates into a human-readable city name. Weather data of the given location is then obtained through Open-Meteo's Weather API.
-                    </p>
+                <div class="grid-container pacman">
+                    <h3>Pac-Man 3D</h3>
                     <figure>
-                        <img src="img/projects/weather.png" alt="Forecaster">
+                        <img src="img/projects/unity.png" alt="Gameplay">
+                    </figure>
+                    <div>
+                        <p>
+                            Using the Unity game engine, I recreated the Pac-Man video game. However, the game is played from a first-person perspective, and scary sounds and props are used to turn it into a horror game. There are 150 pellets scattered across the level that the player must gather to win. There are 4 ghosts that navigate the maze and are constantly alternating between chasing the player and scattering to their respective corners of the map. Each ghost also has a different targeting system when they are in chase mode.
+                        </p>
+                        <ul>
+                            <li>Blinky (Red): The player's position</li>
+                            <li>Pinky (Pink): 4 tiles in front of the player's position</li>
+                            <li>Inky (Cyan): The end of the vector from Blinky's position to the player's position times 2</li>
+                            <li>
+                                Clyde (Orange): The player's position if they are farther than 8 tiles away, the bottom-left corner of the map otherwise
+                            </li>
+                        </ul>
+                        <p>
+                            The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
+                        </p>
+                        <p>
+                            The controls are simple: WASD to walk around, use the mouse to look around, and press the Tab key to pause the game. 
+                        </p>
+                    </div>
+                    <figure>
+                        <img src="img/projects/pacman.png" alt="Gameplay">
                     </figure>
                 </div>
                 <div class="grid-container pathfinder">
@@ -103,32 +122,13 @@
                         <img src="img/projects/a-star.gif" alt="A* Example">
                     </figure>
                 </div>
-                <div class="grid-container pacman">
-                    <h3>Pac-Man 3D</h3>
+                <div class="grid-container forecaster">
+                    <h3>Forecaster</h3>
+                    <p>
+                        Forecaster is a single-page weather application developed with React that can display real-time weather information for the user's location. Weather data for the next seven days is displayed, and a day can be selected to view additional information. Switches are also included to change the units that the temperatures and wind speeds are displayed in. Upon loading the page, the browser will ask the user for permission to access their location using the browser's Geolocation API. A default location is set if permission is denied. BigDataCloud's Reverse Geocoding API converts the given latitude and longitude coordinates into a human-readable city name. Weather data of the given location is then obtained through Open-Meteo's Weather API.
+                    </p>
                     <figure>
-                        <img src="img/projects/unity.png" alt="Gameplay">
-                    </figure>
-                    <div>
-                        <p>
-                            Using the Unity game engine, I recreated the Pac-Man video game. However, the game is played from a first-person perspective, and scary sounds and props are used to turn it into a horror game. There are 150 pellets scattered across the level that the player must gather to win. There are 4 ghosts that navigate the maze and are constantly alternating between chasing the player and scattering to their respective corners of the map. Each ghost also has a different targeting system when they are in chase mode.
-                        </p>
-                        <ul>
-                            <li>Blinky (Red): The player's position</li>
-                            <li>Pinky (Pink): 4 tiles in front of the player's position</li>
-                            <li>Inky (Cyan): The end of the vector from Blinky's position to the player's position times 2</li>
-                            <li>
-                                Clyde (Orange): The player's position if they are farther than 8 tiles away, the bottom-left corner of the map otherwise
-                            </li>
-                        </ul>
-                        <p>
-                            The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
-                        </p>
-                        <p>
-                            The controls are simple: WASD to walk around, use the mouse to look around, and press the Tab key to pause the game. 
-                        </p>
-                    </div>
-                    <figure>
-                        <img src="img/projects/pacman.png" alt="Gameplay">
+                        <img src="img/projects/weather.png" alt="Forecaster">
                     </figure>
                 </div>
             </section>
@@ -166,13 +166,13 @@
                     <h3>Video Games</h3>
                     <div>
                         <p>
-                            I have been playing video games for as long as I can remember. I have also met many of my friends through this shared hobby. Almost everyday, I can get in a discord call with them and play games with them while we catch up or just have a good time. From casual single-player and cooperative games to competitive online games, I spend a lot of my free time playing, watching, and studying video games. Some of my more memorable video game achievements are listed below.
+                            I have been playing video games for as long as I can remember. I have also met many of my friends through this shared hobby. Almost everyday, I can get in a discord call with them and play games with them while we catch up or just have a good time. From casual single-player and cooperative games to competitive online strategy games, I spend a lot of my free time playing, watching, and studying video games. Some of my more memorable video game achievements are listed below.
                         </p>
                     </div>
                     <h5>Teamfight Tactics</h5>
                     <div>
                         <p>
-                            TFT is a competitive online auto battler released by Riot Games in June, 2019. The game is constantly changing with biweekly updates and new sets being released every few months. In 2022, I achieved the rank of Grandmaster for the first time in Set 6: Gizmos & Gadgets. I peaked with 648 League Points (LP), placing myself among the top 500 players in North America.
+                            TFT is a competitive online auto battler released by Riot Games in 2019. It is a seasonal strategy game where 8 players compete against each other by forming and managing a team using limited, randomly generated resources. I started playing TFT in 2020 during Set 3.5: Galaxies and achieved the rank of Master in my first season. In Set 6: Gizmos & Gadgets, I achieved my highest rank ever of Grandmaster with 648 League Points (LP), placing myself among the top 500 players in North America.
                         </p>
                     </div>
                     <figure>
@@ -181,17 +181,23 @@
                     <h5>World of Warcraft</h5>
                     <div>
                         <p>
-                            WoW is a massively multiplayer online role-playing video game released by Blizzard in November, 2004. I joined my current guild earlier this year where I was able to obtain my first Cutting Edge achievement, obtained by killing the final boss of the current season's raid on the hardest difficulty before the end of the season. With this achievement, we were ranked 308 in the US and 825 in the world.
+                            WoW is a massively multiplayer online role-playing video game released by Blizzard in November, 2004. In this game, I participate in Cutting Edge mythic raiding, a high-level team-based achievement that is only earned by a small percentage of players. This involves months of preparation, iteration, and optimization within a 20 or more person team. In addition to growing into a top performer in my specialization, mythic raiding has allowed me to develop personal accountability, adaptability, quick decision-making, and persistence in a fast-paced environment. Beginning my mythic raiding journey in January, 2024 with a rank 3500 guild, I have climbed the ranks and proven myself in a top 200 worldwide guild.
                         </p>
                     <figure>
-                        <img src="img/games/cutting-edge.png" alt="WOW">
+                        <img src="img/games/fyrakk.png" alt="WOW">
+                    </figure>
+                    <figure>
+                        <img src="img/games/ansurek.png" alt="WOW">
+                    </figure>
+                    <figure>
+                        <img src="img/games/hof-gallywix.png" alt="WOW">
                     </figure>
                     </div>
                 </div>
             </section>
         </main>
         <footer>
-            <p>&copy; Grimsley 2024</p>
+            <p>&copy; Grimsley 2025</p>
         </footer>
     </body>
 </html>

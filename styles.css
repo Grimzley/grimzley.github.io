@@ -10,6 +10,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-size: 18px;
     background-color: var(--main-background-color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -162,6 +163,9 @@ footer p {
 
 /* Responsive Media Queries */
 @media screen and (max-width: 1200px) {
+    body {
+        font-size: 14px;
+    }
     div.grid-container {
         grid-template-columns: 1fr;
     }
