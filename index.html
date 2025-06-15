@@ -47,6 +47,47 @@
             </section>
             <section>
                 <h2>Projects</h2>
+                <div class="grid-container snake">
+                    <h3>Snake AI</h3>
+                    <figure>
+                        <img src="img/projects/ai-snake.gif" alt="Snake">
+                    </figure>
+                    <div>
+                        <h5>Overview</h5>
+                        <p> 
+                            Using Python and the pygame library, I recreated the classic Snake game. While the game is playable by the user using the arrow keys, I also implemented a neural network with Pytorch to train a Deep Q-Learning agent to play the game autonomously. Trained models are saved and can be loaded to be observed or receive further training. The gameplay speed is adjustable using the numbers 1 through 9 to save training time. My most successful model is displayed above, utilizing a state vector with 13 inputs and incorporating reward shaping to encourage more efficient learning.
+                        </p>
+                        <h5>Deep Q-Learning</h5>
+                        <div>
+                            <p>
+                                Q-Learning is a model-free reinforcement learning algorithm that learns an optimal action-value function, or Q-function, which tells how good it is to take a certain action in a certain situation. Traditional Q-Learning uses a table to store values, but this becomes impossible in more complicated situations. Deep learning helps Q-Learning grow and handle bigger, harder tasks by using a neural network.
+                            </p>
+                            <p>
+                                Hyperparamaters are external configuration variables that define the training process of the deep learning model.
+                            </p>
+                            <ul>
+                                <li>
+                                    Learning Rate (α): how much the model should change with each training step
+                                </li>
+                                <li>
+                                    Discount Factor (γ): how much the agent values future vs immediate rewards
+                                </li>
+                                <li>
+                                    Exploration Rate (ϵ): probability the agent will take a random action instead of the best-known action
+                                </li>
+                            </ul>
+                            <p>
+                                The Epsilon-Greedy policy is a simple decision-making strategy that balances exploration and exploitation. Exploitation involves choosing the action that is believed to yield the highest reward while exploration involves selecting a random action to discover potentially better options. The parameter epsilon controls this balance, beginning training with a high exploration rate that slowly decays to a minimum after each iteration.          
+                            </p>
+                            <p>
+                                To stabilize training, past experiences are stored in a replay buffer. Instead of training on only the most recent experience, the agent randomly samples a batch of experiences from the buffer, breaking the correlation between consecutive experiences.
+                            </p>
+                            <p>
+                                The Q-values and target Q-values are then calculated. A loss function measures the difference between these values and the network is updated based on the gradients of the loss.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div class="grid-container pacman">
                     <h3>Pac-Man 3D</h3>
                     <figure>
