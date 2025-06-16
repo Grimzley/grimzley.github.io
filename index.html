@@ -28,17 +28,9 @@
                 <h2>About Me</h2>
                 <div class="grid-container about">                    
                     <div class="fun-facts">
-                        <ul>
-                            <li>Full Name: Michael James Grimsley</li>
-                            <li>Birthday: March 30, 1999</li>
-                            <li>MBTI: ISTJ-T</li>
-                            <li>Ethnicity: Filipino-American</li>
-                            <li>Education: Bachelor of Science in Computer Science from San Diego State University</li>
-                            <li>Hobbies: Playing video games, listening to music, and dancing</li>
-                            <li>Favorite Color: Purple</li>
-                            <li>Favorite Animal: Koala</li>
-                            <li>Favorite Show: One Piece</li>
-                        </ul>
+                        <p>
+                            <span>Michael Grimsley</span> is a 26-year-old Filipino-American from San Diego, California. I received my Bachelor's Degree in Computer Science from San Diego State University in 2022 and continued to strengthen my skill set through building various personal projects. I am an aspiring Software Engineer with a strong academic background in computer science and hands-on experience in software development. I am detail-oriented, passionate, and I possess a continuous desire to learn and adapt to new challenges while demonstrating strong problem-solving skills. I am actively seeking a role where I can continue to grow and make meaningful contributions.
+                        </p>
                     </div>
                     <figure>
                         <img src="img/travel/pi-me.jpg" alt="Me in the Philippines">
@@ -55,7 +47,7 @@
                     <div>
                         <h5>Overview</h5>
                         <p> 
-                            Using Python and the pygame library, I recreated the classic Snake game. While the game is playable by the user using the arrow keys, I also implemented a neural network with Pytorch to train a Deep Q-Learning agent to play the game autonomously. Trained models are saved and can be loaded to be observed or receive further training. The gameplay speed is adjustable using the numbers 1 through 9 to save training time. My most successful model is displayed above, utilizing a state vector with 13 inputs and incorporating reward shaping to encourage more efficient learning.
+                            Using Python and the pygame library, I recreated the classic Snake game. While the game is playable by the user using the arrow keys, I also implemented a neural network with Pytorch to train a Deep Q-Learning agent to play the game autonomously. Trained models are saved and can be loaded to be observed or receive further training. The gameplay speed is adjustable using the numbers 1 through 9 to save training time. An example model is displayed above, utilizing a state vector with 13 inputs and incorporating reward shaping to encourage more efficient learning.
                         </p>
                         <h5>Deep Q-Learning</h5>
                         <div>
@@ -80,7 +72,7 @@
                                 The Epsilon-Greedy policy is a simple decision-making strategy that balances exploration and exploitation. Exploitation involves choosing the action that is believed to yield the highest reward while exploration involves selecting a random action to discover potentially better options. The parameter epsilon controls this balance, beginning training with a high exploration rate that slowly decays to a minimum after each iteration.          
                             </p>
                             <p>
-                                To stabilize training, past experiences are stored in a replay buffer. Instead of training on only the most recent experience, the agent randomly samples a batch of experiences from the buffer, breaking the correlation between consecutive experiences.
+                                To stabilize training, past experiences are stored in a replay buffer. Instead of training on only the most recent experience, the agent randomly samples a batch of experiences from the buffer. This allows the agent to learn from the same experiences multiple times, reducing the correlation between consecutive experiences.
                             </p>
                             <p>
                                 The Q-values and target Q-values are then calculated. A loss function measures the difference between these values and the network is updated based on the gradients of the loss.
