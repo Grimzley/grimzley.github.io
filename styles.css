@@ -1,206 +1,54 @@
-:root {
-    --accent-color: #B65FCF;
-    --accent-shadow: #A32CC4;
-    --header-footer-color: #111111;
-    --header-footer-text-color: #FFFFFF;
-    --main-background-color: #F7F7F7;
-    --main-text-color: #444444;
-    --border-color: #777777;
-}
 body {
-    margin: 0;
-    padding: 0;
     font-size: 18px;
-    background-color: var(--main-background-color);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+section {
+    padding: 4vw 0;
 }
 figure {
-    margin: 0;
-    justify-self: center;
-    align-self: center;
+    text-align: center;
 }
 figure img {
-    border: 3px solid var(--accent-color);
-    box-sizing: border-box;
+    max-height: 400px;
+}
+.fa-brands {
+    color: black;
 }
 span {
     font-weight: bold;
 }
-
-/* Header */
-header {
-    background-color: var(--header-footer-color);
+.card {
+    margin: 2vw 0;
 }
-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+.equal-height .col {
+    display: flex;
     align-items: center;
 }
-nav h1 {
-    font-size: 2em;
-    color: var(--accent-color);
-    text-shadow:
-        0px 1px 0px var(--accent-shadow),
-        0px 2px 0px var(--accent-shadow),
-        0px 3px 0px var(--accent-shadow),
-        0px 4px 0px var(--accent-shadow),
-        0px 5px 0px var(--accent-shadow);
+.tabs .indicator {
+    background-color: #03a9f4;
 }
-nav a {
-    color: var(--header-footer-text-color);
-    text-decoration: none;
-    padding: 10px 0;
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background: transparent;
 }
-
-/* Main */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 30px;
+.valign-content {
+    margin: auto;
 }
-main section {
-    border-bottom: 1px solid var(--border-color);
+.parallax-container {
+    height: 300px;
 }
-main section:last-child {
-    border-bottom: none;
+.input-field .prefix.active {
+    color: #03a9f4;
 }
-main section h2 {
-    margin-bottom: 0;
+.input-field :focus + label {
+    color: #03a9f4 !important;
 }
-main section p {
-    color: var(--main-text-color);
+.input-field :focus{
+    border-bottom: 1px solid #03a9f4 !important;
 }
-
-/* Sections */
-div.grid-container {
-    padding: 20px 0;
-    display: grid;
-    gap: 10px;
-}
-div.grid-container h3, div.grid-container h5 {
-    grid-column: 1 / -1;
-}
-
-/* About Me */
-div.about {
-    grid-template-columns: repeat(2, 1fr);
-}
-div.about img {
-    width: 400px;
-    object-fit: contain;
-}
-.fun-facts {
-    align-self: center;
-}
-.fun-facts ul {
-    padding: 0;
-    text-align: center;
-    list-style-type: none;
-}
-
-/* Snake AI */
-div.snake img {
-    max-width: 600px;
-}
-
-/* Pac-Man 3D */
-div.pacman img {
-    max-width: 600px;
-    object-fit: contain;
-}
-
-/* Pathfinding Visualizer */
-div.pathfinder {
-    grid-template-columns: repeat(2, 1fr);
-}
-div.pathfinder div {
-    grid-row: span 2;
-}
-div.pathfinder img{
-    max-width: 500px;
-    object-fit: contain;
-}
-
-/* Forecaster */
-div.forecaster img {
-    max-width: 600px;
-    object-fit: contain;
-}
-
-/* Music */
-div.music {
-    grid-template-columns: repeat(3, 1fr);
-}
-div.music div {
-    grid-column: 1 / -1;
-}
-div.music img {
-    width: 300px;
-    object-fit: contain;
-}
-div.music figure:first-of-type {
-    grid-column: span 3;
-}
-.ignite {
-    color: #f76d19;
-    text-decoration: none;
-}
-
-/* Games */
-div.games img {
-    max-width: 600px;
-    object-fit: contain;
-}
-
-/* Footer */
-footer {
-    background-color: var(--header-footer-color);
-    padding: 10px 0;
-}
-footer p {
-    color: var(--header-footer-text-color);
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Responsive Media Queries */
-@media screen and (max-width: 1200px) {
-    body {
-        font-size: 14px;
-    }
-    div.grid-container {
-        grid-template-columns: 1fr;
-    }
-    div.music figure:nth-of-type(2) {
-        grid-row: 5;
-    }
-    div.music figure:nth-of-type(3) {
-        grid-row: 7;
-    }
-    div.music figure:nth-of-type(4) {
-        grid-row: 8;
-    }
-}
-@media screen and (max-width: 700px) {
-    nav {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    nav h1 {
-        grid-column: span 4;
-        grid-row: 1;
-    }
-    section h2 {
-        text-align: center;
-    }
-    div.about img, div.snake img, div.pacman img, div.pathfinder img, div.forecaster img, div.games img {
-        max-width: 350px;
-    }
-}
-@media screen and (max-width: 500px) {
-    div.about img, div.snake img, div.pacman img, div.pathfinder img, div.forecaster img, div.music img, div.games img {
-        max-width: 250px;
-    }
+.material-icons {
+    display: inline;
+    vertical-align: text-bottom;
 }

@@ -1,236 +1,497 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, inital-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="/img/icons/favicon.png">
-        <title>Michael Grimsley</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div>
-                    <a class="fa fa-github" href="https://github.com/Grimzley" target="_blank">
-                        <span> GitHub</span>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icons/favicon.png">
+    <title>Michael Grimsley</title>
+    <!-- Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper light-blue">
+                <div class="container">
+                    <div class="brand-logo">Grimsley</div>
+                    <a href="#" class="sidenav-trigger right" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
                     </a>
-                </div>
-                <h1>Grimsley</h1>
-                <div>
-                    <a class="fa fa-linkedin" href="https://www.linkedin.com/in/mjgrimsley/" target="_blank">
-                        <span> LinkedIn</span>
-                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#hobbies">Hobbies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
             </nav>
-        </header>
-        <main>
-            <section>
-                <h2>About Me</h2>
-                <div class="grid-container about">                    
-                    <div class="fun-facts">
-                        <p>
-                            <span>Michael Grimsley</span> is a 26-year-old Filipino-American from San Diego, California. I received my Bachelor's Degree in Computer Science from San Diego State University in 2022 and continued to strengthen my skill set through building various personal projects. I am an aspiring Software Engineer with a strong academic background in computer science and hands-on experience in software development. I am detail-oriented, passionate, and I possess a continuous desire to learn and adapt to new challenges while demonstrating strong problem-solving skills. I am actively seeking a role where I can continue to grow and make meaningful contributions.
-                        </p>
+            <ul class="sidenav" id="mobile-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="white">
+            <div class="container">
+                <div class="row center-align equal-height">
+                    <div class="col s12 m5">
+                        <div class="valign-content">
+                            <figure>
+                                <img class="circle responsive-img z-depth-3" src="img/travel/pi-me.jpg" alt="">
+                            </figure>
+                        </div>
                     </div>
-                    <figure>
-                        <img src="img/travel/pi-me.jpg" alt="Me in the Philippines">
-                    </figure>
-                </div>
-            </section>
-            <section>
-                <h2>Projects</h2>
-                <div class="grid-container snake">
-                    <h3>Snake AI</h3>
-                    <figure>
-                        <img src="img/projects/ai-snake.gif" alt="Snake">
-                    </figure>
-                    <div>
-                        <h5>Overview</h5>
-                        <p> 
-                            Using Python and the pygame library, I recreated the classic Snake game. While the game is playable by the user using the arrow keys, I also implemented a neural network with Pytorch to train a Deep Q-Learning agent to play the game autonomously. Trained models are saved and can be loaded to be observed or receive further training. The gameplay speed is adjustable using the numbers 1 through 9 to save training time. An example model is displayed above, utilizing a state vector with 13 inputs and incorporating reward shaping to encourage more efficient learning.
-                        </p>
-                        <h5>Deep Q-Learning</h5>
-                        <div>
-                            <p>
-                                Q-Learning is a model-free reinforcement learning algorithm that learns an optimal action-value function, or Q-function, which tells how good it is to take a certain action in a certain situation. Traditional Q-Learning uses a table to store values, but this becomes impossible in more complicated situations. Deep learning helps Q-Learning grow and handle bigger, harder tasks by using a neural network.
-                            </p>
-                            <p>
-                                Hyperparamaters are external configuration variables that define the training process of the deep learning model.
-                            </p>
-                            <ul>
-                                <li>
-                                    Learning Rate (α): how much the model should change with each training step
-                                </li>
-                                <li>
-                                    Discount Factor (γ): how much the agent values future vs immediate rewards
-                                </li>
-                                <li>
-                                    Exploration Rate (ϵ): probability the agent will take a random action instead of the best-known action
-                                </li>
-                            </ul>
-                            <p>
-                                The Epsilon-Greedy policy is a simple decision-making strategy that balances exploration and exploitation. Exploitation involves choosing the action that is believed to yield the highest reward while exploration involves selecting a random action to discover potentially better options. The parameter epsilon controls this balance, beginning training with a high exploration rate that slowly decays to a minimum after each iteration.          
-                            </p>
-                            <p>
-                                To stabilize training, past experiences are stored in a replay buffer. Instead of training on only the most recent experience, the agent randomly samples a batch of experiences from the buffer. This allows the agent to learn from the same experiences multiple times, reducing the correlation between consecutive experiences.
-                            </p>
-                            <p>
-                                The Q-values and target Q-values are then calculated. A loss function measures the difference between these values and the network is updated based on the gradients of the loss.
-                            </p>
+                    <div class="col s12 m7">
+                        <div class="valign-content">
+                            <h2>Michael Grimsley</h2>
+                            <h4>Software Developer</h4>
+                            <a href="https://www.linkedin.com/in/mjgrimsley/" target="_blank">
+                                <i class="fa-brands fa-square-linkedin fa-2xl"></i>
+                            </a>
+                            <a href="https://github.com/Grimzley" target="_blank">
+                                <i class="fa-brands fa-square-github fa-2xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="grid-container pacman">
-                    <h3>Pac-Man 3D</h3>
-                    <figure>
-                        <img src="img/projects/unity.png" alt="Gameplay">
-                    </figure>
-                    <div>
-                        <p>
-                            Using the Unity game engine, I recreated the Pac-Man video game. However, the game is played from a first-person perspective, and scary sounds and props are used to turn it into a horror game. There are 150 pellets scattered across the level that the player must gather to win. There are 4 ghosts that navigate the maze and are constantly alternating between chasing the player and scattering to their respective corners of the map. Each ghost also has a different targeting system when they are in chase mode.
-                        </p>
-                        <ul>
-                            <li>Blinky (Red): The player's position</li>
-                            <li>Pinky (Pink): 4 tiles in front of the player's position</li>
-                            <li>Inky (Cyan): The end of the vector from Blinky's position to the player's position times 2</li>
-                            <li>
-                                Clyde (Orange): The player's position if they are farther than 8 tiles away, the bottom-left corner of the map otherwise
+            </div>
+        </section>
+        <!-- About Me Section -->
+        <section id="about" class="scrollspy grey lighten-4">
+            <div class="container">
+                <h3>About Me</h3>
+                <p>
+                    <span>Michael Grimsley</span> is a 26-year-old Filipino-American from San Diego, California. I received my Bachelor's Degree in Computer Science from San Diego State University in 2022 and have continued to strengthen my skill set through building various personal projects. I am an aspiring Software Developer with a strong academic background in computer science and hands-on experience in software development. I am detail-oriented, passionate, and I possess a continuous desire to learn and adapt to new challenges while demonstrating strong problem-solving skills. I am actively seeking a role where I can continue to grow and make meaningful contributions.
+                </p>
+                <h4 class="center-align">My Tech Stack</h4>
+                <div class="row">
+                    <div class="col s12 m10 offset-m1">
+                        <ul class="tabs">
+                            <li class="tab col s3">
+                                <a href="#lang" class="light-blue-text">Languages</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#front" class="light-blue-text">Front-end</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#back" class="light-blue-text">Back-end</a>
+                            </li>
+                            <li class="tab col s3">
+                                <a href="#tools" class="light-blue-text">Dev Tools</a>
                             </li>
                         </ul>
-                        <p>
-                            The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
-                        </p>
-                        <p>
-                            The controls are simple: WASD to walk around, use the mouse to look around, and press the Tab key to pause the game. 
-                        </p>
-                    </div>
-                    <figure>
-                        <img src="img/projects/pacman.png" alt="Gameplay">
-                    </figure>
-                </div>
-                <div class="grid-container pathfinder">
-                    <h3>Pathfinding Visualizer</h3>
-                    <div>
-                        <h5>Overview</h5>
-                        <p>
-                            Using Python and the pygame library, I created a color-coded graph search visualizer. This program implements Depth-First Search, Breadth-First Search, Greedy Best-First Search, and A*. The grid is customizable, allowing the user to change the location of the source and target and add and remove obstacles. A legend is included on the side to indicate what the color of each tile in the grid represents.
-                        </p>
-                        <h5>How To Use</h5>
-                        <div>
+                        <!-- Programming Languages -->
+                        <div class="col s12" id="lang">
+                            <p class="flow-text light-blue-text">Programming Languages</p>
                             <p>
-                                Left clicking on the grid will change the color of the hovered tile to black, turning that tile into a wall. Conversely, right clicking on the grid will change the color of the hovered tile to gray, turning that tile into a path. In addition, clicking and dragging will convert any tiles the cursor moves over accordingly. By design, the tiles along the edges will always form a wall enclosing the grid.
-                            </p>
-                            <p>
-                                Other keybinds include:
-                            </p>
-                            <ul>
-                                <li>SPACE: begin search</li>
-                                <li>S: set start at hovered tile</li>
-                                <li>E: set end at hovered tile</li>
-                                <li>D: switch between adjacent and orthogonal movement</li>
-                                <li>R: reset</li>
-                                <li>C: clear</li>
-                            </ul>
-                            <p>
-                                A* is the default algorithm on startup. Clicking any of the four algorithm buttons will change the set algorithm and cause the program to start searching with the selected algorithm.
+                                Software or website development using <span>Python, JavaScript, Java, or C</span>.
                             </p>
                         </div>
-                        <h5>Algorithms Explained</h5>
-                        <div>
+                        <!-- Front-end -->
+                        <div class="col s12" id="front">
+                            <p class="flow-text light-blue-text">Front-end</p>
                             <p>
-                                Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
+                                User interface development with <span>React/React Native</span>.
                             </p>
                             <p>
-                                The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
+                                Responsive layout design and styling using <span>Bootstrap</span> or <span>Materialize</span>.
+                            </p>
+                        </div>
+                        <!-- Back-end -->
+                        <div class="col s12" id="back">
+                            <p class="flow-text light-blue-text">Back-end</p>
+                            <p>
+                                Website or web application development with <span>Django</span>.
                             </p>
                             <p>
-                                All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
+                                User authentication and database management using <span>Firebase</span> or <span>Supabase</span>.
+                            </p>
+                        </div>
+                        <!-- Developer Tools -->
+                        <div class="col s12" id="tools">
+                            <p class="flow-text light-blue-text">Developer Tools</p>
+                            <p>
+                                Containerization with <span>Docker</span>.
+                            </p>
+                            <p>
+                                Interface design and prototyping with <span>Figma</span>.
+                            </p>
+                            <p>
+                                Asset bundling with <span>Webpack</span>.
+                            </p>
+                            <p>
+                                Video game development using <span>Unity</span> and <span>C#</span>.
                             </p>
                         </div>
                     </div>
-                    <figure>
-                        <img src="img/projects/pathfinder.png" alt="Pathfinding Visualizer">
-                    </figure>
-                    <figure>
-                        <img src="img/projects/a-star.gif" alt="A* Example">
-                    </figure>
                 </div>
-                <div class="grid-container forecaster">
-                    <h3>Forecaster</h3>
-                    <p>
-                        Forecaster is a single-page weather application developed with React that can display real-time weather information for the user's location. Weather data for the next seven days is displayed, and a day can be selected to view additional information. Switches are also included to change the units that the temperatures and wind speeds are displayed in. Upon loading the page, the browser will ask the user for permission to access their location using the browser's Geolocation API. A default location is set if permission is denied. BigDataCloud's Reverse Geocoding API converts the given latitude and longitude coordinates into a human-readable city name. Weather data of the given location is then obtained through Open-Meteo's Weather API.
-                    </p>
-                    <figure>
-                        <img src="img/projects/weather.png" alt="Forecaster">
-                    </figure>
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects" class="scrollspy white">
+            <div class="container">
+                <h3>Projects</h3>
+                <div class="row">
+                    <!-- Finance Tracker -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/finance.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Finance Management Web Application<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Django and Postgres full-stack web application with responsive Bootstrap UI.
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">BalancedBudget<i class="material-icons right">close</i></span>
+                                <p>
+                                    BalancedBudget is a full-stack finance management web application developed with Django using a Postgres database. The website allows authenticated users to track and plan their finances, utilizing a responsive UI designed with Bootstrap that displays user spending habits and progress through various charts and graphs. Users are able to enter, edit, and delete payments, set monthly budgets for different expense categories, and visualize their finances with ease.
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <a href="https://www.balancedbudget.dev/" target="_blank">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Weather App -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/weather.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Weather Application<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Single-page React application, integrating external API's to fetch and process data.
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Forecaster<i class="material-icons right">close</i></span>
+                                <p>
+                                    Forecaster is a single-page weather application developed with React that displays real-time weather information for the user's location. Weather data for the next seven days is displayed, and a day can be selected to view additional information. Switches are also included to change the units that the temperatures and wind speeds are displayed in. Upon loading the page, the browser will ask the user for permission to access their location using the browser's Geolocation API. A default location is set if permission is denied. BigDataCloud's Reverse Geocoding API converts the given latitude and longitude coordinates into a human-readable city name. Weather data of the given location is then obtained through Open-Meteo's Weather API.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Snake AI -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/ai-snake.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Reinforcement Learning Game Agent<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Python-based Deep Q-Learning agent trained to play Snake autonomously.
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Snake AI<i class="material-icons right">close</i></span>
+                                <div>
+                                    <p> 
+                                        Using Python and the pygame library, I recreated the classic Snake game. While the game is playable by the user using the arrow keys, I also implemented a neural network with Pytorch to train a Deep Q-Learning agent to play the game autonomously. Trained models are saved and can be loaded to be observed or receive further training. The gameplay speed is adjustable using the numbers 1 through 9 to save training time. An example model is displayed above, utilizing a state vector with 13 inputs and incorporating reward shaping to encourage more efficient learning.
+                                    </p>
+                                    <p>
+                                        Q-Learning is a model-free reinforcement learning algorithm that learns an optimal action-value function, or Q-function, which tells how good it is to take a certain action in a certain situation. Traditional Q-Learning uses a table to store values, but this becomes impossible in more complicated situations. Deep learning helps Q-Learning grow and handle bigger, harder tasks by using a neural network.
+                                    </p>
+                                    <p>
+                                        Hyperparamaters are external configuration variables that define the training process of the deep learning model.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Learning Rate (α): how much the model should change with each training step
+                                        </li>
+                                        <li>
+                                            Discount Factor (γ): how much the agent values future vs immediate rewards
+                                        </li>
+                                        <li>
+                                            Exploration Rate (ϵ): probability the agent will take a random action instead of the best-known action
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        The Epsilon-Greedy policy is a simple decision-making strategy that balances exploration and exploitation. Exploitation involves choosing the action that is believed to yield the highest reward while exploration involves selecting a random action to discover potentially better options. The parameter epsilon controls this balance, beginning training with a high exploration rate that slowly decays to a minimum after each iteration.          
+                                    </p>
+                                    <p>
+                                        To stabilize training, past experiences are stored in a replay buffer. Instead of training on only the most recent experience, the agent randomly samples a batch of experiences from the buffer. This allows the agent to learn from the same experiences multiple times, reducing the correlation between consecutive experiences.
+                                    </p>
+                                    <p>
+                                        The Q-values and target Q-values are then calculated. A loss function measures the difference between these values and the network is updated based on the gradients of the loss.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PacMan 3D -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/pacman.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">3D Video Game<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Horror-themed Pac-Man recreated in first-person using Unity and C#.
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">PacMan 3D<i class="material-icons right">close</i></span>
+                                <div>
+                                    <p>
+                                        Using the Unity game engine, I recreated the Pac-Man video game. However, the game is played from a first-person perspective, and scary sounds and props are used to turn it into a horror game. There are 150 pellets scattered across the level that the player must gather to win. There are 4 ghosts that navigate the maze and are constantly alternating between chasing the player and scattering to their respective corners of the map. Each ghost also has a different targeting system when they are in chase mode.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Blinky (Red): The player's position
+                                        </li>
+                                        <li>
+                                            Pinky (Pink): 4 tiles in front of the player's position
+                                        </li>
+                                        <li>
+                                            Inky (Cyan): The end of the vector from Blinky's position to the player's position times 2
+                                        </li>
+                                        <li>
+                                            Clyde (Orange): The player's position if they are farther than 8 tiles away, the bottom-left corner of the map otherwise
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Graph Search Visualizer -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/a-star.gif" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Graph Search Visualizer<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Python-based graph search visualizer, implementing DFS, BFS, GBFS, and A* graph traversal and pathfinding algorithms.
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Pathfinding Visualizer<i class="material-icons right">close</i></span>
+                                <div>
+                                    <p>
+                                        Using Python and the pygame library, I created a color-coded graph search visualizer. This program implements Depth-First Search, Breadth-First Search, Greedy Best-First Search, and A*. The grid is customizable, allowing the user to change the location of the source and target and add and remove obstacles. A legend is included on the side to indicate what the color of each tile in the grid represents.
+                                    </p>
+                                    <p>
+                                        Left clicking on the grid will change the color of the hovered tile to black, turning that tile into a wall. Conversely, right clicking on the grid will change the color of the hovered tile to gray, turning that tile into a path. In addition, clicking and dragging will convert any tiles the cursor moves over accordingly. By design, the tiles along the edges will always form a wall enclosing the grid.
+                                    </p>
+                                    <p>
+                                        A* is the default algorithm on startup. Clicking any of the four algorithm buttons will change the set algorithm and cause the program to start searching with the selected algorithm.
+                                    </p>
+                                </div>
+                                <h5>Algorithms Explained</h5>
+                                <div>
+                                    <p>
+                                        Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
+                                    </p>
+                                    <p>
+                                        The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
+                                    </p>
+                                    <p>
+                                        All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-            <section>
-                <h2>Hobbies</h2>
-                <div class="grid-container music">
-                    <h3>Music</h3>
-                    <div>
+            </div>
+        </section>
+         <div class="parallax-container hide-on-med-and-down">
+            <div class="parallax">
+                <img class="responsive-img" src="img/parallax/dci.jpg" alt="">
+            </div>
+        </div>
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="scrollspy grey lighten-4">
+            <div class="container">
+                <h3>Hobbies</h3>
+
+                <h4>Music</h4>
+                <div class="row equal-height">
+                    <div class="col s12 l6">
                         <p>
                             I love music and am almost always listening to music from various genres. I first started learning how to play the guitar and piano around the age of 10. I learned how to play the trombone in my middle school's concert band, and I continued to play it in my high school's concert band, marching band, and jazz band. I also played the violin in my high school's orchestra for 2 years. After graduating high school, I then played the baritone for the Gold Drum and Bugle Corps for 2 seasons. I have developed a strong appreciation for music and enjoy attending concerts and festivals with my friends.
                         </p>
                     </div>
-                    <figure>
-                        <img src="img/music/dci-action-shot.jpg" alt="DCI">
-                    </figure>
-                    <h5>
-                        KASA Ignite (<a class="ignite" href="https://www.instagram.com/kasa_ignitedance/" target="_blank">@kasa_ignitedance</a>)
-                    </h5>
-                    <div>
-                        <p>
-                            Ignite is the Korean American Student Association's open kpop dance team at San Diego State University. During the school year, they host weekly kpop dance cover workshops. Ignite also occasionally performs kpop dance covers and medleys at various events within San Diego County. I first saw Ignite perform at SDSU during the Asian Pacific Student Alliance's 8th Annual Night Market in 2021. I began attending their workshops the following semester, where I made a lot of new friends and performed with them at various events.
-                        </p>
-                    </div>
-                    <figure>
-                        <img src="img/ignite/ignite-omg-and-candy.jpg" alt="UCSD RPD and Showcase">
-                    </figure>
-                    <figure>
-                        <img src="img/ignite/ignite-kplay.jpg" alt="KPlay 2023">
-                    </figure>
-                    <figure>
-                        <img src="img/ignite/ignite-ucsd.jpg" alt="UCSD RPD and Showcase">
-                    </figure>
-                </div>
-                <div class="grid-container games">
-                    <h3>Video Games</h3>
-                    <div>
-                        <p>
-                            I have been playing video games for as long as I can remember. I have also met many of my friends through this shared hobby. Almost everyday, I can get in a discord call with them and play games with them while we catch up or just have a good time. From casual single-player and cooperative games to competitive online strategy games, I spend a lot of my free time playing, watching, and studying video games. Some of my more memorable video game achievements are listed below.
-                        </p>
-                    </div>
-                    <h5>Teamfight Tactics</h5>
-                    <div>
-                        <p>
-                            TFT is a competitive online auto battler released by Riot Games in 2019. It is a seasonal strategy game where 8 players compete against each other by forming and managing a team using limited, randomly generated resources. I started playing TFT in 2020 during Set 3.5: Galaxies and achieved the rank of Master in my first season. In Set 6: Gizmos & Gadgets, I achieved my highest rank ever of Grandmaster with 648 League Points (LP), placing myself among the top 500 players in North America.
-                        </p>
-                    </div>
-                    <figure>
-                        <img src="img/games/tft-gm.png" alt="TFT">
-                    </figure>
-                    <h5>World of Warcraft</h5>
-                    <div>
-                        <p>
-                            WoW is a massively multiplayer online role-playing video game released by Blizzard in November, 2004. In this game, I participate in Cutting Edge mythic raiding, a high-level team-based achievement that is only earned by a small percentage of players. This involves months of preparation, iteration, and optimization within a 20 or more person team. In addition to growing into a top performer in my specialization, mythic raiding has allowed me to develop personal accountability, adaptability, quick decision-making, and persistence in a fast-paced environment. Beginning my mythic raiding journey in January, 2024 with a rank 3500 guild, I have climbed the ranks and proven myself in a top 200 worldwide guild.
-                        </p>
-                    <figure>
-                        <img src="img/games/fyrakk.png" alt="WOW">
-                    </figure>
-                    <figure>
-                        <img src="img/games/ansurek.png" alt="WOW">
-                    </figure>
-                    <figure>
-                        <img src="img/games/hof-gallywix.png" alt="WOW">
-                    </figure>
+                    <div class="col s12 l6">
+                        <div class="valign-content">
+                            <figure>
+                                <img class="responsive-img" src="img/music/dci-action-shot.jpg" alt="">
+                            </figure>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; Grimsley 2025</p>
-        </footer>
-    </body>
+
+                <h4>
+                    KASA Ignite (<a class="ignite" href="https://www.instagram.com/kasa_ignitedance/" target="_blank">@kasa_ignitedance</a>)
+                </h4>
+                <p>
+                    Ignite is the Korean American Student Association's open kpop dance team at San Diego State University. During the school year, they host weekly kpop dance cover workshops. Ignite also occasionally performs kpop dance covers and medleys at various events within San Diego County. I first saw Ignite perform at SDSU during the Asian Pacific Student Alliance's 8th Annual Night Market in 2021. I began attending their workshops the following semester, where I made a lot of new friends and performed with them at various events.
+                </p>
+                <div class="row">
+                    <div class="col s12 xl6">
+                        <figure>
+                            <img class="responsive-img" src="img/ignite/ignite-omg-and-candy.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="col s12 xl6">
+                        <figure>
+                            <img class="responsive-img" src="img/ignite/ignite-ucsd.jpg" alt="">
+                        </figure>
+                    </div>
+                </div>
+
+                <h4>Video Games</h4>
+                <p>
+                    I have been playing video games for as long as I can remember. I have also met many of my friends through this shared hobby. Almost everyday, I can get in a discord call with them and play games with them while we catch up or just have a good time. From casual single-player and cooperative games to competitive online strategy games, I spend a lot of my free time playing, watching, and studying video games. Some of my more memorable video game achievements are listed below.
+                </p>
+                <h5>Teamfight Tactics</h5>
+                <p>
+                    TFT is a competitive online auto battler released by Riot Games in 2019. It is a seasonal strategy game where 8 players compete against each other by forming and managing a team using limited, randomly generated resources. I started playing TFT in 2020 during Set 3.5: Galaxies and achieved the rank of Master in my first season. In Set 6: Gizmos & Gadgets, I achieved my highest rank ever of Grandmaster with 648 League Points (LP), placing myself among the top 500 players in North America.
+                </p>
+                <figure>
+                    <img class="responsive-img" src="img/games/tft-gm.png" alt="">
+                </figure>
+                <h5>World of Warcraft</h5>
+                <div>
+                    <p>
+                        WoW is a massively multiplayer online role-playing video game released by Blizzard in November, 2004. In this game, I participate in Cutting Edge mythic raiding, a high-level team-based achievement that is only earned by a small percentage of players. This involves months of preparation, iteration, and optimization within a 20 or more person team. Beginning my mythic raiding journey in January, 2024 with a rank 3500 guild, I have climbed the ranks and proven myself in a top 200 worldwide guild.
+                    </p>
+                <figure>
+                    <img class="responsive-img" src="img/games/fyrakk.png" alt="">
+                </figure>
+                <figure>
+                    <img class="responsive-img" src="img/games/ansurek.png" alt="">
+                </figure>
+                <figure>
+                    <img class="responsive-img" src="img/games/hof-gallywix.png" alt="">
+                </figure>
+                </div>
+            </div>
+        </section>
+        <div class="parallax-container hide-on-med-and-down">
+            <div class="parallax">
+                <img class="responsive-img" src="img/parallax/sl.jpg" alt="">
+            </div>
+        </div>
+        <!-- Contact Section -->
+        <section id="contact" class="scrollspy white">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 l5">
+                        <h4 class="light-blue-text">Get in Touch</h4>
+                        <p>
+                            I'm always excited to connect with other developers, collaborate on new projects, or explore career opportunities. If you'd like to chat about my work, have a project in mind, or just want to say hello, feel free to reach out!
+                        </p>
+                    </div>
+                    <div class="col s12 l5 offset-l2">
+                        <form action="">
+                            <div class="input-field">
+                                <i class="material-icons prefix">email</i>
+                                <input type="email" id="email">
+                                <label for="email">Your email address</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix">message</i>
+                                <textarea class="materialize-textarea" id="message"></textarea>
+                                <label for="message">Your question or concern...</label>
+                            </div>
+                            <div class="input-field center">
+                                <button class="btn light-blue" disabled>Out Of Order</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5>About Me</h5>
+                    <p>
+                        I'm currently seeking new opportunities as a software developer, and I'd love to hear from you. Whether you're looking for a dedicated developer to join your team or have a project idea you'd like to discuss, please don't hesitate to get in touch.
+                    </p>
+                </div>
+                
+                <div class="col s12 l6">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li>
+                            <i class="material-icons">home</i> Murrieta, CA 92562, US
+                        </li>
+                        <li>
+                            <i class="material-icons">mail</i> michael.grimsley@yahoo.com
+                        </li>
+                        <li>
+                            <i class="material-icons">phone_enabled</i> +1 (619) 254-4783
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col s12 l4 offset-l2">
+                <h5>Links</h5>
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/mjgrimsley/" target="_blank">
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Grimzley" target="_blank">
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright black">
+            <div class="container center-align">
+                &copy; 2025 Michael Grimsley. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.scrollspy').scrollSpy();
+            $('.tabs').tabs();
+            $('.parallax').parallax();
+        })
+    </script>
+</body>
 </html>
