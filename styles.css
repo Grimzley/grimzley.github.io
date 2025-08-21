@@ -1,3 +1,6 @@
+:root {
+    --theme-color: #03a9f4;
+}
 body {
     font-size: 18px;
 }
@@ -19,6 +22,9 @@ span {
 .card {
     margin: 2vw 0;
 }
+.card-action a{
+    color: var(--theme-color) !important;
+}
 .equal-height {
     display: flex;
     flex-wrap: wrap;
@@ -28,7 +34,7 @@ span {
     align-items: center;
 }
 .tabs .indicator {
-    background-color: #03a9f4;
+    background-color: var(--theme-color);
 }
 .tabs .tab a:focus, .tabs .tab a:focus.active {
     background: transparent;
@@ -40,13 +46,13 @@ span {
     height: 300px;
 }
 .input-field .prefix.active {
-    color: #03a9f4;
+    color: var(--theme-color);
 }
 .input-field :focus + label {
-    color: #03a9f4 !important;
+    color: var(--theme-color) !important;
 }
 .input-field :focus{
-    border-bottom: 1px solid #03a9f4 !important;
+    border-bottom: 1px solid var(--theme-color) !important;
 }
 .material-icons {
     display: inline;
