@@ -54,6 +54,9 @@ span {
 .input-field :focus{
     border-bottom: 1px solid var(--theme-color) !important;
 }
+h3 .material-icons {
+    font-size: 48px;
+}
 .material-icons {
     display: inline;
     vertical-align: text-bottom;
