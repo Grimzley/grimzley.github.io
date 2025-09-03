@@ -194,6 +194,39 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Graph Search Visualizer -->
+                    <div class="col s12 l10 offset-l1">
+                        <div class="card">
+                            <div class="center-align">
+                                <div class="card-image waves-effect waves-light">
+                                    <img class="activator" src="img/projects/a-star.png" alt="">
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator">Graph Search Visualizer<i class="material-icons right">more_vert</i></span>
+                                <p>
+                                    Interactive web-based graph traversal and pathfinding visualizer using PyScript
+                                </p>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title">Algorithms Explained<i class="material-icons right">close</i></span>
+                                <div>
+                                    <p>
+                                        Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
+                                    </p>
+                                    <p>
+                                        The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
+                                    </p>
+                                    <p>
+                                        All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <a href="https://graph-search-visualizer-nu.vercel.app/" target="_blank">View Website</a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Snake AI -->
                     <div class="col s12 l10 offset-l1">
                         <div class="card">
@@ -277,36 +310,6 @@
                                     </ul>
                                     <p>
                                         The game officially begins when the first pellet is obtained. Blinky enters the maze first, and the rest become active as the player progresses the level. There are also 4 power pellets, one near each corner of the map, that will briefly frighten the ghosts and allow them to be eaten by the player. If a ghost is eaten, they are sent back to their home area and are temporarily inactive. Otherwise, if the player is eaten by a ghost, the player respawns at the starting point and loses a life. If all 3 lives are lost, the game is over.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Graph Search Visualizer -->
-                    <div class="col s12 l10 offset-l1">
-                        <div class="card">
-                            <div class="center-align">
-                                <div class="card-image waves-effect waves-light">
-                                    <img class="activator" src="img/projects/a-star.gif" alt="">
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title activator">Graph Search Visualizer<i class="material-icons right">more_vert</i></span>
-                                <p>
-                                    Python-based customizable graph search visualizer, implementing DFS, BFS, GBFS, and A* graph traversal and pathfinding algorithms.
-                                </p>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title">Algorithms Explained<i class="material-icons right">close</i></span>
-                                <div>
-                                    <p>
-                                        Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
-                                    </p>
-                                    <p>
-                                        The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
-                                    </p>
-                                    <p>
-                                        All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
                                     </p>
                                 </div>
                             </div>
