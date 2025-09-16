@@ -36,6 +36,9 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#hobbies">Hobbies</a></li>
             <li><a href="#contact">Contact</a></li>
+            <hr>
+            <li><a href="./pages/terms.html">Terms of Use</a></li>
+            <li><a href="./pages/privacy.html">Privacy Policy</a></li>
         </ul>
     </header>
     <main>
@@ -212,14 +215,17 @@
                                 <span class="card-title">Algorithms Explained<i class="material-icons right">close</i></span>
                                 <div>
                                     <p>
-                                        Two lists, an open list and a closed list, are used to prevent the algorithm from checking a tile more than once and to allow backtracking if needed. Nodes in the closed list represent tiles that have been visited, while nodes in the open list represent tiles that are available to be visited. Initially, the open list contains just the start node.
+                                        Graph traversal uses two lists: an <strong>open list</strong> (nodes to explore) and a <strong>closed list</strong> (nodes already explored). The open list starts with the start node. The algorithm repeatedly takes the next node from the open list, moves it to the closed list, and checks if it's the goal. If so, the path can be reconstructed using parent references. Otherwise, its neighbors are added to the open list. If the open list becomes empty, no path exists.
                                     </p>
                                     <p>
-                                        The algorithm begins by checking if the open list is empty. An empty open list means that all available tiles have been checked and a path from the start tile to the end tile does not exist. Otherwise, set the current node to the next node in the open list and move it to the closed list. If the current node is the end node, a path has been found and the algorithm exits. Each node keeps track of their parent node, allowing the path to be reconstructed. If the current node is not the end node, generate all available neighbors and add them to the open list. This process repeats until all nodes have been checked or a path to the end node has been found.
+                                        The difference between algorithms lies in how the next node is chosen:
                                     </p>
-                                    <p>
-                                        All four of the implemented algorithms function in this way, only differing by how they select the next node from the open list. Breadth-First Search uses the first-in, first-out (FIFO) method, and Depth-First Search uses the last-in, first-out (LIFO) method. Greedy Best-First Search explores the tile that is closest to the end. The estimated path cost from a given node to the end node, also known as the node's h-cost, is calculated for each node when they are created, and the open list is sorted by shortest h-cost. A* utilizes each node's h-cost, but also takes into account each node's g-cost. This is the exact path cost from a given node to the start node. A node's f-cost is the sum of a its g-cost and h-cost, and A* chooses the next node with the lowest f-cost.
-                                    </p>
+                                    <ul>
+                                        <li><strong>BFS</strong>: first-in, first-out (FIFO).</li>
+                                        <li><strong>DFS</strong>: last-in, first-out (LIFO).</li>
+                                        <li><strong>Greedy Best-First</strong>: chooses the node with the smallest estimated distance (<em>h-cost</em>) to the goal.</li>
+                                        <li><strong>A*</strong>: chooses the node with the lowest total cost (<em>f-cost = g-cost + h-cost</em>), combining distance traveled and estimated distance to the goal.</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="card-action">
